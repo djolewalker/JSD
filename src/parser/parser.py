@@ -1,7 +1,7 @@
 from textx import metamodel_from_file, language
 import os
 
-resume_metamodel_path = 'meta_model/resume.tx'
+resume_metamodel_path = 'src/meta_model/resume.tx'
 metamodel = metamodel_from_file(resume_metamodel_path)
 
 

@@ -5,7 +5,7 @@ from src.generator.generator import generate
 
 
 def main():
-    resume_path = '/resume_examples/person_one.resume'
+    resume_path = '../resume_examples/person_one.resume'
 
     try:
         resume_model = parse_resume(resume_path)
