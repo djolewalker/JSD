@@ -1,7 +1,7 @@
 {% if model.education | length %}
     <div class="container education-container">
         {% with value='Education' %}
-            {% include 'partials/tittle.j2' %}
+            {% include 'partials/title.j2' %}
         {% endwith %}
         {% for education in model.education %}
             <section class="item">

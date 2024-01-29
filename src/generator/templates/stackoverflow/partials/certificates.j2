@@ -1,0 +1,44 @@
+{% if model.certificates | length %}
+    <section class="section">
+        <header>
+            <h2 class="section-title">Certificates</h2>
+        </header>
+        <section id="certificates">
+            {% for certificate in model.certificates %}
+                <section class="certificate-item">
+                    <header class="clear">
+                        {% if certificate.date %}
+                            <div class="date">
+                                {{ certificate.date.year }}
+                            </div>
+                        {% endif %}
+
+                        <div class="header-left">
+                            {% if certificate.name %}
+                                <div class="name">
+                                    {{ certificate.name }}
+                                </div>
+                            {% endif %}
+
+                            {% if certificate.issuer %}
+                                <div class="awarder">
+                                    {{ certificate.issuer }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </header>
+
+                    <div class="item">
+                        {% if certificate.url %}
+                            <span class="url">
+                            <span class="fas fa-external-link-alt"></span>
+                            <a target="_blank" href="{{ certificate.url }}">{{ certificate.url }}</a>
+                            </span>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
+

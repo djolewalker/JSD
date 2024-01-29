@@ -138,4 +138,4 @@ PHONE: /[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}/;
 
 EMAIL: /\S+@\S+\.\S+/;
 
-TEMPLATE: /Kendall|Macciato/;
+TEMPLATE: /Kendall|Macciato|Stackoverflow/;

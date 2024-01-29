@@ -1,0 +1,44 @@
+{% if model.awards | length %}
+    <section class="section">
+        <header>
+            <h2 class="section-title">Awards</h2>
+        </header>
+        <section id="awards">
+            {% for award in model.awards %}
+                <section class="award-item">
+                    {% if award.summary %}
+                        <label for="award-item-{{ loop.index }}"></label>
+                    {% endif %}
+
+                    <header class="clear">
+                        {% if award.date %}
+                            <div class="date">
+                                {{ award.date.year }}
+                            </div>
+                        {% endif %}
+
+                        <div class="header-left">
+                            {% if award.title %}
+                                <div class="title">
+                                    {{ award.title }}
+                                </div>
+                            {% endif %}
+
+                            {% if award.issuer %}
+                                <div class="awarder">
+                                    {{ award.issuer }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </header>
+
+                    <div class="item">
+                        {% if award.summary %}
+                            <div class="summary">{{ award.summary }}</div>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}

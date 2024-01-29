@@ -3,7 +3,7 @@
         {% for skill in model.skills %}
             <section class="container">
                 {% with value=skill.name %}
-                    {% include 'partials/tittle.j2' %}
+                    {% include 'partials/title.j2' %}
                 {% endwith %}
 
                 <h4 class="bold capitalize">{{ skill.level }}</h4>

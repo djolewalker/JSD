@@ -1,0 +1,53 @@
+{% if model.projects | length %}
+    <section class="section">
+        <header>
+            <h2 class='section-title'>Projects <span class="item-count">({{ model.projects.length }})</span></h2>
+        </header>
+        <section id="projects">
+            {% for project in model.projects %}
+                <section class="project-item">
+                    {% if project.summary %}
+                        <label for="project-item-{{ loop.index }}"></label>
+                    {% endif %}
+
+                    {% if project.name %}
+                        <header class="clear">
+                            <div class="position">{{ project.name }}</div>
+                            {% if project.duration.start_date %}
+                                <div class="date">
+                                    <span class="startDate">{{ project.duration.start_date.month }} {{ project.duration.start_date.year }}</span>
+                                    {% if project.duration.end_date %}
+                                        <span class="endDate">- {{ project.duration.end_date.month }} {{ project.duration.end_date.year }}</span>
+                                    {% else %}
+                                        <span class="endDate">- Current</span>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </header>
+                    {% endif %}
+
+                    {% if project.url %}
+                        <span class="website">
+                    <span class="fas fa-external-link-alt"></span>
+                    <a target="_blank" href="{{ project.url }}">{{ project.url }}</a>
+                </span>
+                    {% endif %}
+
+                    <div class="item">
+                        {% if project.summary %}
+                            <div class="summary">{{ project.summary }}</div>
+                        {% endif %}
+
+                        {% if project.highlights|length %}
+                            <ul class="highlights">
+                                {% for highlight in model.highlights %}
+                                    <li>{{ highlight }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
