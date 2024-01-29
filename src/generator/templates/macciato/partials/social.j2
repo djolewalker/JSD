@@ -1,0 +1,15 @@
+{% if profile.username %}
+    {% if profile.network|lower == 'linkedin' %}
+        {% with icon='fa-linkedin-square', text=profile.username, url=profile.url %}
+            {% include 'partials/info_tag.j2' %}
+        {% endwith %}
+    {% else %}
+        {% with icon=('fa-',profile.network|lower)|join, text=profile.username, url=profile.url %}
+            {% include 'partials/info_tag.j2' %}
+        {% endwith %}
+    {% endif %}
+{% else %}
+    {% with icon=('fa-',profile.network|lower)|join, text=profile.network, url=profile.url %}
+        {% include 'partials/info_tag.j2' %}
+    {% endwith %}
+{% endif %}

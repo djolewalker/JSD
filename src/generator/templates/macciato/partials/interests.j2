@@ -1,0 +1,20 @@
+{% if model.interests | length %}
+    <div class="container interests-container">
+        {% with value='Interests' %}
+            {% include 'partials/tittle.j2' %}
+        {% endwith %}
+
+        {% for interest in model.interests %}
+            <section class="item">
+                <h4 class="bold">{{ interest.name }}</h4>
+                {% if interest.keywords | length %}
+                    <ul class="minimal">
+                        {% for keyword in interest.keywords %}
+                            <li>{{ keyword }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </div>
+{% endif %}

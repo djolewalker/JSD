@@ -1,0 +1,30 @@
+{% if model.volunteer | length %}
+
+    <div class="container volunteer-container">
+        {% with value='Volunteer' %}
+            {% include 'partials/tittle.j2' %}
+        {% endwith %}
+
+        {% for volunteer in model.volunteer %}
+            <section class="item">
+                {% with name=volunteer.institution, url=volunteer.url, show_url=True, start_date=volunteer.duration.start_date, end_date=volunteer.duration.end_date %}
+                    {% include 'partials/section_header.j2' %}
+                {% endwith %}
+
+                {% if volunteer.position %}
+                    <h4>{{ volunteer.position }}</h4>
+                {% endif %}
+
+                <p class="summary">{{ volunteer.summary }}</p>
+
+                {% if volunteer.highlights %}
+                    <div class="flex-container">
+                        {% for highlight in volunteer.highlights %}
+                            <h6 class="skill">{{ highlight }}</h6>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </div>
+{% endif %}
