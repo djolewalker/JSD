@@ -22,21 +22,21 @@ def generate(model):
         raise Exception('Unsupported template type')
 
 
-def write(resume, output_dir='../output_dir'):
+def write(resume, output_path='../output_dir'):
     output_filename = 'person_one'
 
-    if not path.exists(output_dir):
-        makedirs(output_dir)
+    if not path.exists(output_path):
+        makedirs(output_path)
 
-    with open(path.join(output_dir, f'{output_filename}.html'), 'w') as f:
+    with open(path.join(output_path, f'{output_filename}.html'), 'w') as f:
         f.write(resume)
 
 
 @generator('resume', 'HTML')
-def resume_generator(metamodel, model, output_dir, overwrite, debug, **custom_args):
-    if output_dir:
+def resume_generator(metamodel, model, output_path, overwrite, debug, **custom_args):
+    if output_path:
         resume = generate(model)
-        write(resume, output_dir)
+        write(resume, output_path)
         return resume
     else:
         return generate(model)

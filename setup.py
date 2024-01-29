@@ -16,7 +16,7 @@ setup(
     install_requires=["textx", "Jinja2"],
     entry_points={
         'textx_languages': [
-            'resume_lang = parser.parer:resume_parser',
+            'resume_lang = parser.parser:resume_parser',
         ],
         'textx_generators': [
             'resume_gen = generator.generator:resume_generator',
