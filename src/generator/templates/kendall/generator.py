@@ -1,4 +1,5 @@
 from jinja2 import FileSystemLoader, Environment
+from importlib.resources import files
 
 
 def set_profile_icons(model):
@@ -25,7 +26,7 @@ def set_profile_icons(model):
 
 
 def get_template():
-    loader = FileSystemLoader(searchpath="generator/templates/kendall")
+    loader = FileSystemLoader(searchpath=str(files('generator').joinpath('templates/kendall')))
     env = Environment(loader=loader)
     return env.get_template('template.j2')
 
@@ -33,8 +34,8 @@ def get_template():
 def generate(model):
     set_profile_icons(model)
 
-    style = open('generator/templates/kendall/style.css', 'r').read()
-    print_style = open('generator/templates/kendall/print.css', 'r').read()
+    style = files('generator').joinpath('templates/kendall/style.css').read_text()
+    print_style = files('generator').joinpath('templates/kendall/print.css').read_text()
 
     template = get_template()
 

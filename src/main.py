@@ -1,7 +1,7 @@
 import logging
 
-from src.parser.parser import parse_resume
-from src.generator.generator import generate
+from parser.parser import parse_resume
+from generator.generator import generate
 
 
 def main():

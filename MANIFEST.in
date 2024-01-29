@@ -1,7 +1,0 @@
-include src/generator/templates/kendall/*.j2
-include src/generator/templates/kendall/*.css
-include src/generator/templates/macciato/*.j2
-include src/generator/templates/macciato/*.css
-include src/generator/templates/stackoverflow/*.j2
-include src/generator/templates/stackoverflow/*.css
-include src/meta_model/resume.tx
