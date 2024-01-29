@@ -1,0 +1,33 @@
+{% if model.skills | length %}
+    <section class="section">
+        <header>
+            <h2 class='section-title'>Skills</h2>
+        </header>
+        <section id="skills">
+            {% for skill in model.skills %}
+                <div class="item">
+                    {% if skill.name %}
+                        <h3 class="name">
+                            {{ skill.name }}
+                        </h3>
+                    {% endif %}
+
+                    {% if skill.level %}
+                        <div class="level {{ skill.level|lower }}">
+                            <em>{{ skill.level }}</em>
+                            <div class="bar"></div>
+                        </div>
+                    {% endif %}
+
+                    {% if skill.keywords | length %}
+                        <ul class="keywords">
+                            {% for keyword in skill.keywords %}
+                                <li>{{ keyword }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}

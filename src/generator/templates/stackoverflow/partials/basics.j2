@@ -1,0 +1,95 @@
+<header id="header" class="clear">
+    {% if model.personal_info.image %}
+        <img class="image" src="{{ model.personal_info.image }}" alt="{{ model.personal_info.name }}"/>
+        <div class="middle">
+            <h1 class="name">{{ model.personal_info.name }}</h1>
+            <h2 class="label">{{ model.personal_info.label }}</h2>
+        </div>
+    {% else %}
+        <div>
+            <h1 class="name">{{ model.personal_info.name }}</h1>
+            <h2 class="label">{{ model.personal_info.label }}</h2>
+        </div>
+    {% endif %}
+
+    {% if model.personal_info.location %}
+        <span class="location">
+            {% if model.personal_info.address %}
+                <span class="address">{{ model.personal_info.address }},</span>
+            {% endif %}
+
+            {% if model.personal_info.address %}
+                <span class="postalCode">{{ model.personal_info.postal_code }},</span>
+            {% endif %}
+
+            {% if model.personal_info.address %}
+                <span class="city">{{ model.personal_info.city }},</span>
+            {% endif %}
+
+            {% if model.personal_info.address %}
+                <span class="region">{{ model.personal_info.region }}</span>
+            {% endif %}
+
+            {% if model.personal_info.address %}
+                <span class="countryCode">{{ model.personal_info.country_code }}</span>
+            {% endif %}
+		</span>
+    {% endif %}
+
+
+    <div id="contact">
+        {% if model.personal_info.url %}
+            <div class="website">
+                <span class="fas fa-external-link-alt"></span>
+                <a class="hide-href-print" target="_blank" target="_blank"
+                   href="{{ model.personal_info.url }}">{{ model.personal_info.url }}</a>
+            </div>
+        {% endif %}
+
+        {% if model.personal_info.email %}
+            <div class="email">
+                <span class="far fa-envelope"></span>
+                <a class="hide-href-print"
+                   href="mailto:{{ model.personal_info.email }}">{{ model.personal_info.email }}</a>
+            </div>
+        {% endif %}
+
+        {% if model.personal_info.phone %}
+            <div class="phone">
+                <span class="fas fa-mobile-alt"></span>
+                <a class="hide-href-print"
+                   href="tel:{{ model.personal_info.phone }}">{{ model.personal_info.phone }}</a>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if model.personal_info.profiles | length %}
+        <div id="profiles">
+            {% for profile in model.personal_info.profiles %}
+                <div class="item">
+                    {% if profile.network %}
+                        <div class="username">
+                            <span class="fab fa-{{ profile.network|replace(" ", "-") }} {{ profile.network|replace(" ", "-") }} social"></span>
+                            {% if profile.url %}
+                                <span class="url">
+						            <a target="_blank"
+                                       href="{{ profile.url }}">{{ profile.username if profile.username else profile.network }}</a>
+					            </span>
+                            {% else %}
+                                <span>{{ username }}</span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</header>
+
+{% if model.personal_info.summary %}
+    <section class="section">
+        <section class="main-summary">
+            <div>{{ model.personal_info.summary }}</div>
+        </section>
+    </section>
+{% endif %}

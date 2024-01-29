@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>{{ model.personal_info.name }}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <style>
+        {{style}}
+    </style>
+
+</head>
+<body>
+
+<div id="resume">
+    {% include 'partials/basics.j2' %}
+    {% include 'partials/skills.j2' %}
+    {% include 'partials/work.j2' %}
+    {% include 'partials/projects.j2' %}
+    {% include 'partials/volunteer.j2' %}
+    {% include 'partials/education.j2' %}
+    {% include 'partials/awards.j2' %}
+    {% include 'partials/certificates.j2' %}
+    {% include 'partials/publications.j2' %}
+    {% include 'partials/languages.j2' %}
+    {% include 'partials/interests.j2' %}
+</div>
+
+</body>
+</html>

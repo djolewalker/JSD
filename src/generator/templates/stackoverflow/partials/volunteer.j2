@@ -1,0 +1,69 @@
+{% if model.volunteer | length %}
+    <section class="section">
+        <header>
+            <h2 class='section-title'>Volunteer</h2>
+        </header>
+        <section id="volunteer">
+            {% for volunteer in model.volunteer %}
+                <section class="volunteer-item">
+                    {% if volunteer.organization %}
+                        {% if volunteer.summary %}
+                            <label for="volunteer-item-{{ loop.index }}"></label>
+                        {% endif %}
+
+                        <header class="clear">
+                            <div class="date">
+                                {% if volunteer.duration.start_date %}
+                                    <span class="startDate">
+                                        {{ volunteer.duration.start_date.month }} - {{ volunteer.duration.start_date.year }}
+                                    </span>
+                                {% endif %}
+
+                                {% if volunteer.duration.end_date %}
+                                    <span class="endDate">
+                                        - {{ volunteer.duration.end_date.month }} - {{ volunteer.duration.end_date.year }}
+                                    </span>
+                                {% else %}
+                                    <span class="endDate">
+                                        - Current
+                                    </span>
+                                {% endif %}
+                            </div>
+                            <div class="header-left">
+                                {% if volunteer.position %}
+                                    <div class="position">
+                                        {{ volunteer.position }}
+                                    </div>
+                                {% endif %}
+                                <div class="organization">
+                                    {{ volunteer.organization }}
+                                </div>
+                            </div>
+
+                        </header>
+                    {% endif %}
+
+                    {% if volunteer.url %}
+                        <div class="website">
+                            <span class="fas fa-external-link-alt"></span>
+                            <a target="_blank" href="{{ volunteer.url }}">{{ volunteer.url }}</a>
+                        </div>
+                    {% endif %}
+
+                    <div class="item">
+                        {% if volunteer.summary %}
+                            <div class="summary">{{ volunteer.summary }}</div>
+                        {% endif %}
+                        {% if volunteer.highlights | length %}
+                            <ul class="highlights">
+                                {% for highlight in volunteer.highlights %}
+                                    <li>{{ highlight }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}

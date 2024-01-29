@@ -1,0 +1,31 @@
+{% if model.interests | length %}
+<section class="section">
+    <header>
+        <h2 class='section-title'>Interests</h2>
+    </header>
+    <section id="interests">
+        {% for interest in model.interests %}
+            <div class="item">
+                {% if interest.name %}
+                    <h3 class="name">
+                        {{ interest.name }}
+                    </h3>
+                {% endif %}
+
+                {% if interest.keywords | length %}
+                    <ul class="keywords">
+                        {% for keyword in interest.keywords %}
+                            <li>{{ keyword }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if interest.summary %}
+                    <div class="summary">{{ interest.summary }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </section>
+</section>
+{% endif %}
+

@@ -1,0 +1,75 @@
+{% if model.education | length %}
+    <section class="section">
+        <header>
+            <h2 class='section-title'>Education <span class="item-count">({{ model.education | length }})</span></h2>
+        </header>
+
+        <section id="education">
+            {% for education in model.education %}
+                <section class="education-item">
+                    {% if education.summary %}
+                        <label for="education-item-{{ loop.index }}"></label>
+                    {% endif %}
+
+                    <header class="clear">
+                        <div class="date">
+                            {% if education.duration.start_date %}
+                                <span class="startDate">
+                                    {{ education.duration.start_date.year }}
+                                </span>
+                            {% endif %}
+
+                            {% if education.duration.end_date %}
+                                <span class="endDate">
+                                    - {{ education.duration.end_date.year }}
+                                </span>
+                            {% else %}
+                                <span class="endDate">
+                                    - Current
+                                </span>
+                            {% endif %}
+                        </div>
+                        <div class="header-left">
+                            {% if education.study_type %}
+                                <div class="studyType">
+                                    {{ education.study_type }}
+                                </div>
+                            {% endif %}
+
+                            {% if education.area %}
+                                <div class="area">
+                                    {{ education.area }}
+                                </div>
+                            {% endif %}
+                            {% if education.institution %}
+                                <div class="institution">
+                                    {{ education.institution }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </header>
+
+                    {% if education.courses | length %}
+                        <ul class="courses">
+                            {% for course in education.courses %}
+                                <li>{{ course }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <div class="item">
+                        {% if education.score %}
+                            <div class='gpa'>
+                                <strong> Grade:</strong> <span>{{ education.score }}</span>
+                            </div>
+                        {% endif %}
+
+                        {% if education.summary %}
+                            <div class="summary">{{ education.summary }}</div>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}

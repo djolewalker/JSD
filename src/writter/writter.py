@@ -8,6 +8,6 @@ def write(model, resume):
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 
-    if model.template in ['Kendall', 'Macciato']:
+    if model.template in ['Kendall', 'Macciato', 'Stackoverflow']:
         with open(os.path.join(output_directory, f'{output_filename}.html'), 'w') as f:
             f.write(resume)
