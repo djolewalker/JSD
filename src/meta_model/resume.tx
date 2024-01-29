@@ -10,6 +10,7 @@ Resume:
   'Languages:' languages*=Language
   'Interests:' interests*=Interest
   'Projects:' projects*=Project
+  ('Template:' template=TEMPLATE)?
 ;
 
 PersonalInfo:
@@ -34,8 +35,8 @@ Location:
 
 Profile:
   'Network:' network=STRING
-  ('Username:' username=STRING)?
   'URL:' url=URL
+  ('Username:' username=STRING)?
 ;
 
 COUNTRY_CODE: /[A-Za-z]{2}/;
@@ -64,7 +65,7 @@ Education:
   'Area:' area=STRING
   'Study type:' study_type=STUDY_TYPE
   'Duration:' duration=Duration
-  'Score:' score=FLOAT
+  ('Score:' score=FLOAT)?
   'Courses:' courses*=STRING[',']
 ;
 
@@ -103,7 +104,7 @@ Language:
 
 Interest:
   'Name:' name=STRING
-  'Keywords:' keywords*=STRING[',']
+  'Keywords:' keywords+=STRING[',']
 ;
 
 Project:
@@ -136,3 +137,5 @@ URL: /https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?
 PHONE: /[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}/;
 
 EMAIL: /\S+@\S+\.\S+/;
+
+TEMPLATE: /Kendall|Macciato/;

@@ -1,0 +1,28 @@
+{% if model.works | length %}
+    <div class="container work-container">
+        {% with value='Experience' %}
+            {% include 'partials/tittle.j2' %}
+        {% endwith %}
+        {% for work in model.works %}
+            <section class="item">
+                {% with name=work.name, url=work.url, show_url=True, start_date=work.duration.start_date, end_date=work.duration.end_date %}
+                    {% include 'partials/section_header.j2' %}
+                {% endwith %}
+
+                {% if work.position %}
+                    <h4>{{ work.position }}</h4>
+                {% endif %}
+
+                <p class="summary">{{ work.summary }}</p>
+
+                {% if work.highlights %}
+                    <div class="flex-container">
+                        {% for highlight in work.highlights %}
+                            <h6 class="skill">{{ highlight }}</h6>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </div>
+{% endif %}

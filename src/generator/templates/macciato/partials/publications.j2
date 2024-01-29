@@ -1,0 +1,19 @@
+{% if model.publications | length %}
+    <div class="container publications-container">
+        {% with value='Publications' %}
+            {% include 'partials/tittle.j2' %}
+        {% endwith %}
+
+        {% for publication in model.publications %}
+            <section class="item">
+                {% with name=publication.name, url=publication.url, show_url=True %}
+                    {% include 'partials/section_header.j2' %}
+                {% endwith %}
+
+                <h5 class="awarder">{{ publication.publisher }}</h5>
+
+                <p class="summary">{{ publication.summary }}</p>
+            </section>
+        {% endfor %}
+    </div>
+{% endif %}

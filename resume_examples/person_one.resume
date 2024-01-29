@@ -1,7 +1,7 @@
 Personal info:
     Name: "John Doe"
     Label: "Programmer"
-    Image: https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg
+    Image: https://www.hsph.harvard.edu/diversity/wp-content/uploads/sites/2597/2020/11/Barbosa-1-500x500-1.jpg
     Email: john@gmail.com
     Phone: (912) 555-4321
     URL: https://johndoe.com/
@@ -14,16 +14,16 @@ Personal info:
         Region: "California"
     Profiles:
         Network: "Twitter"
-        Username: "john"
         URL: https://twitter.com/john/
+        Username: "john"
 
         Network: "Linkedin"
-        Username: "John Doe"
         URL: https://linkedin.com/johnDoe/
+        Username: "John Doe"
 
         Network: "Instagram"
-        Username: "john_the_programmer"
         URL: https://instagram.com/john_the_programmer/
+        Username: "john_the_programmer"
 
 
 Works:
@@ -121,3 +121,5 @@ Projects:
     Description: "Description..."
     Highlights: "Won award at AIHacks 2020"
     URL: https://project.com/
+
+Template: Macciato

@@ -1,0 +1,27 @@
+<div class="container about-container">
+    {% with name='About' %}
+        {% include 'partials/tittle.j2' %}
+    {% endwith %}
+
+    {% with loc=model.personal_info.location, icon="fa-map-marker" %}
+        {% with text=[loc.address,loc.city,loc.region,loc.postal_code,loc.country_code]|join(' ') %}
+            {% include 'partials/info_tag.j2' %}
+        {% endwith %}
+    {% endwith %}
+
+    {% with icon="fa-envelope-o", isEmail=true, url=model.personal_info.email, text=model.personal_info.email %}
+        {% include 'partials/info_tag.j2' %}
+    {% endwith %}
+
+    {% with icon="fa-mobile", text=model.personal_info.phone %}
+        {% include 'partials/info_tag.j2' %}
+    {% endwith %}
+
+    {% with icon="fa-globe", text=model.personal_info.url %}
+        {% include 'partials/info_tag.j2' %}
+    {% endwith %}
+
+    {% for profile in model.personal_info.profiles %}
+        {% include 'partials/social.j2' %}
+    {% endfor %}
+</div>

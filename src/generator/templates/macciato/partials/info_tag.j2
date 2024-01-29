@@ -1,0 +1,15 @@
+<div class="info-tag-container">
+    {% if icon %}
+        <i class="fa {{ icon }}"></i>
+    {% endif %}
+
+    {% if url %}
+    <h6 class="info-text">
+        <a href="{% if isEmail %}mailto:{% endif %}{{ url }}" target="_blank">
+            {{ text }}
+        </a>
+    </h6>
+    {% else %}
+    <h6 class="info-text">{{ text }}</h6>
+    {% endif %}
+</div>

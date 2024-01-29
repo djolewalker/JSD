@@ -1,5 +1,8 @@
-from src.parser import parser
 import logging
+
+from src.parser import parser
+from src.generator import generator
+from src.writter import writter
 
 
 def main():
@@ -7,7 +10,8 @@ def main():
 
     try:
         resume_model = parser.parse_resume(resume_path)
-        print(resume_model)
+        resume = generator.generate(resume_model)
+        writter.write(resume_model, resume)
     except Exception as e:
         logging.exception(e)
 
