@@ -4,3 +4,6 @@ __pycache__
 *.dot
 .DS_Store
 output
+*.egg-info
+build
+dist

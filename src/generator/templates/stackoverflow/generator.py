@@ -1,5 +1,6 @@
 from jinja2 import FileSystemLoader, Environment
 
+
 def get_template():
     loader = FileSystemLoader(searchpath="generator/templates/stackoverflow")
     env = Environment(loader=loader)
