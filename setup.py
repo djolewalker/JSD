@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='resume_domain_builder',
-    version='0.1.0',
+    version='0.1.1',
     description='Resume builder tool with built in resume domain specific language',
     url='https://github.com/djolewalker/JSD',
     author='Dimitrije Zarkovic (djolewalker)',
@@ -12,7 +12,7 @@ setup(
     license='MIT',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
-    package_data={'': ['*.j2', '**/partials/*.j2', '*.css'], 'meta_model': ['meta_model/resume.tx']},
+    package_data={'': ['*.j2', '**/partials/*.j2', '*.css'], 'meta_model': ['*.tx']},
     install_requires=['textx', 'Jinja2'],
     entry_points={
         'textx_languages': [
