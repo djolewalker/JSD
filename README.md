@@ -225,4 +225,4 @@ Template: Macciato
 ```
 
 ## Output generated with Macciato template
-![example resume image](https://github.com/djolewalker/JSD/develop/.github/example_resume.png)
+![example resume image](https://raw.githubusercontent.com/djolewalker/JSD/develop/.github/example_resume.png)
