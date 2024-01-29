@@ -1,17 +1,15 @@
 import logging
 
-from src.parser import parser
-from src.generator import generator
-from src.writter import writter
+from src.parser.parser import parse_resume
+from src.generator.generator import generate
 
 
 def main():
-    resume_path = '../resume_examples/person_one.resume'
+    resume_path = '/resume_examples/person_one.resume'
 
     try:
-        resume_model = parser.parse_resume(resume_path)
-        resume = generator.generate(resume_model)
-        writter.write(resume_model, resume)
+        resume_model = parse_resume(resume_path)
+        resume = generate(resume_model)
     except Exception as e:
         logging.exception(e)
 
