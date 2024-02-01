@@ -1,9 +1,0 @@
-venv
-.idea
-__pycache__
-*.dot
-.DS_Store
-output
-*.egg-info
-build
-dist
