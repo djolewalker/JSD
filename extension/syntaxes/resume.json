@@ -16,9 +16,6 @@
       "include": "#language_keyword"
     },
     {
-      "include": "#language_operation"
-    },
-    {
       "include": "#regular_expression"
     }
   ],
@@ -262,9 +259,6 @@
         }
       ]
     },
-    "language_operation": {
-      "patterns": []
-    },
     "regular_expression": {
       "patterns": [
         {
@@ -280,6 +274,20 @@
                 {
                   "match": "(\\S+@\\S+\\.\\S+)",
                   "name": "string.unquoted"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "match": "\\b(Kendall|Macciato|Stackoverflow)\\b",
+          "name": "string.unquoted",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "match": "\\b(Kendall|Macciato|Stackoverflow)\\b",
+                  "name": "strong"
                 }
               ]
             }
