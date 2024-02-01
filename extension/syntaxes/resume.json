@@ -1,0 +1,291 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "resume",
+  "scopeName": "source.resume",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#number"
+    },
+    {
+      "include": "#language_keyword"
+    },
+    {
+      "include": "#language_operation"
+    },
+    {
+      "include": "#regular_expression"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "match": "//.*$",
+          "name": "comment.line"
+        },
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single",
+          "begin": "'",
+          "end": "'"
+        },
+        {
+          "name": "string.quoted.double",
+          "begin": "\"",
+          "end": "\""
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "match": "\\b[0-9]+\\b[\\.\\-]{0,1}",
+          "name": "constant.numeric"
+        }
+      ]
+    },
+    "language_keyword": {
+      "patterns": [
+        {
+          "match": "Personal\\ info\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Works\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Volunteer\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Education\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Certificates\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Awards\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Publications\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Skills\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Languages\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Interests\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Projects\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Template\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Name\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Label\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Image\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Email\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Phone\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "URL\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Summary\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Location\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Profiles\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Address\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "City\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Postal\\ Code\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Region\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Network\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Username\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Position\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Duration\\:",
+          "name": "constant.language"
+        },
+        {
+          "match": "Highlights\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "\\,",
+          "name": "variable.name"
+        },
+        {
+          "match": "Organization\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Institution\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Area\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Country\\ Code\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Study\\ type\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Score\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Courses\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Title\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Date\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Issuer\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Publisher\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Release\\ date\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Level\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Keywords\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Language\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Fluency\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Description\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "Start\\ date\\:",
+          "name": "variable.name"
+        },
+        {
+          "match": "End\\ date\\:",
+          "name": "variable.name"
+        }
+      ]
+    },
+    "language_operation": {
+      "patterns": []
+    },
+    "regular_expression": {
+      "patterns": [
+        {
+          "match": "([\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6})",
+          "name": "constant.numeric"
+        },
+        {
+          "match": "(\\S+@\\S+\\.\\S+)",
+          "name": "markup.underline.link",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "match": "(\\S+@\\S+\\.\\S+)",
+                  "name": "string.unquoted"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

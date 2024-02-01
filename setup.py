@@ -12,6 +12,7 @@ setup(
     license='MIT',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
+    include_package_data=True,
     package_data={'': ['*.j2', '**/partials/*.j2', '*.css'], 'meta_model': ['*.tx']},
     install_requires=['textx', 'Jinja2'],
     entry_points={
@@ -23,11 +24,16 @@ setup(
         ]
     },
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Topic :: Software Development :: Code Generators',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
-        'Natural Language :: English',
-        'Programming Language :: Python :: 3.10',
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Information Technology",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
     ],
 )

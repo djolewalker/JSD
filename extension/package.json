@@ -1,0 +1,27 @@
+{
+  "name": "resume-domain-builder",
+  "description": "resume-domain-builder",
+  "version": "0.1.1",
+  "publisher": "djolewalker",
+  "repository": "https://github.com/djolewalker/JSD",
+  "engines": {
+    "vscode": "^1.32.3"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "resume",
+        "extensions": [
+          "resume"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "resume",
+        "scopeName": "source.resume",
+        "path": "syntaxes/resume.json"
+      }
+    ]
+  }
+}

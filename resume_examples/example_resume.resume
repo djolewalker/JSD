@@ -1,35 +1,35 @@
 Personal info:
     Name: "John Doe"
     Label: "Programmer"
-    Image: https://www.hsph.harvard.edu/diversity/wp-content/uploads/sites/2597/2020/11/Barbosa-1-500x500-1.jpg
+    Image: "https://www.hsph.harvard.edu/diversity/wp-content/uploads/sites/2597/2020/11/Barbosa-1-500x500-1.jpg"
     Email: john@gmail.com
-    Phone: (912) 555-4321
-    URL: https://johndoe.com/
+    Phone: +(381) 691 42233
+    URL: "https://johndoe.com/"
     Summary: "A summary of John Doe…"
     Location: 
         Address: "2712 Broadway St"
         City: "San Francisco"
-        Country Code: US
+        Country Code: "US"
         Postal Code: "CA 94115"
         Region: "California"
     Profiles:
         Network: "Twitter"
-        URL: https://twitter.com/john/
+        URL: "https://twitter.com/john/"
         Username: "john"
 
         Network: "Linkedin"
-        URL: https://linkedin.com/johnDoe/
+        URL: "https://linkedin.com/johnDoe/"
         Username: "John Doe"
 
         Network: "Instagram"
-        URL: https://instagram.com/john_the_programmer/
+        URL: "https://instagram.com/john_the_programmer/"
         Username: "john_the_programmer"
 
 
 Works:
     Name: "Company 1"
     Position: "President"
-    URL: https://company.com
+    URL: "https://company.com"
     Duration: 
         Start date: 02-2019
     Summary: "The best director in the company 1"
@@ -37,7 +37,7 @@ Works:
 
     Name: "Company 2"
     Position: "Programmer"
-    URL: https://max-company.com
+    URL: "https://max-company.com"
     Duration: 
         Start date: 06-2015
         End date: 02-2019
@@ -48,7 +48,7 @@ Works:
 Volunteer:
     Organization: "Organization"
     Position: "Volunteer"
-    URL: https://organization.com/
+    URL: "https://organization.com/"
     Duration: 
         Start date: 01-01-2020
         End date: 01-01-2021
@@ -58,7 +58,7 @@ Volunteer:
 
 Education:
     Institution: "University"
-    URL: https://institution.com/
+    URL: "https://institution.com/"
     Area: "Software Development"
     Study type: Bachelor
     Duration: 
@@ -72,7 +72,7 @@ Certificates:
     Name: "Certificate"
     Date: 07-11-2021
     Issuer: "Issuer Company"
-    URL: https://certificate.com
+    URL: "https://certificate.com"
 
 
 Awards:
@@ -86,7 +86,7 @@ Publications:
     Name: "Publication"
     Publisher: "Company"
     Release date: 01-10-2019
-    URL: https://publication.com
+    URL: "https://publication.com"
     Summary: "Description…"
 
 
@@ -120,6 +120,6 @@ Projects:
         End date: 05-11-2021
     Description: "Description..."
     Highlights: "Won award at AIHacks 2020"
-    URL: https://project.com/
+    URL: "https://project.com/"
 
 Template: Macciato
