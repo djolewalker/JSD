@@ -122,7 +122,7 @@ Date:
   day=DAY '-' month=MONTH '-' year=YEAR | month=MONTH '-' year=YEAR
 ;
 
-COUNTRY_CODE: '"' COUNTRY_CODE_BASE '"' | '\'' COUNTRY_CODE_BASE '\'';
+COUNTRY_CODE: '"'- COUNTRY_CODE_BASE '"'- | '\''- COUNTRY_CODE_BASE '\''-;
 
 COUNTRY_CODE_BASE: /[A-Za-z]{2}/;
 
@@ -134,7 +134,7 @@ MONTH: /(0|1)[0-9]/;
 
 YEAR: /[0-9]{4}/;
 
-URL: '"' URL_BASE '"' | '\'' URL_BASE '\'';
+URL: '"'- URL_BASE '"'- | '\''- URL_BASE '\''-;
 
 URL_BASE: /https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)/;
 
