@@ -32,8 +32,9 @@ jobs:
       run: |
         pip install textx[cli]
         
-    - name: Generate example resume
+    - name: Register resume langauge and generate example resume
       run: |
+        pip install setup.py
         textx generate resume_examples/example_resume.resume --target HTML -o output
 
     - name: Deploy to GH Pages 🚀
