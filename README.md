@@ -224,5 +224,9 @@ Projects:
 Template: Macciato
 ```
 
-## Output generated with Macciato template
+## Last version of the example resume generated with Macciato template
+
+Running example available at: https://djolewalker.github.io/JSD/resume
+
+Exampled printed as PDF in the chrome:
 ![example resume image](https://raw.githubusercontent.com/djolewalker/JSD/develop/.github/example_resume.png)
